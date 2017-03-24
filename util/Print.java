@@ -1,3 +1,4 @@
+package util;
 import java.util.Arrays;
 public class Print{
    public static void p(Object o){
