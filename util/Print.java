@@ -1,6 +1,9 @@
 package util;
 import java.util.Arrays;
-/**Clase para imprimir archivos*/
+/**Clase para imprimir archivos
+@author Antonio Martinez Cruz
+@version 0.0.4
+*/
 public class Print{
    /**Metodo estatico que imprime un objeto*/
    public static void p(Object o){
