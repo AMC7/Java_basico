@@ -23,7 +23,7 @@ public class ManejadorDeArchivos{
 	}
 	/**Metodo que te recibe una url y te regresa un String con el texto que leiste*/
 	public static String lee(String url){
-	try{
+	try{		
 	String resultado="";	
 	String texto="";	
 	BufferedReader fr = new BufferedReader(new FileReader(new File(url)));
