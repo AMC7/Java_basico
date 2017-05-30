@@ -1,26 +1,13 @@
+package util;
 import static util.MyString.*;
 /**@version 1.0
    @author Antonio Martinez Cruz*/
-public class Dupla<T,S>{
-	private T fst;
-	private S snd;
+public class Dupla{
+	public Object fst;
+	public Object snd;
 	
-	Dupla(T fst,S snd){
+	public Dupla(Object fst,Object snd){
 		this.fst=fst;
-		this.snd=snd;
-	}
-	
-	public T fst(){
-		return fst;
-	}
-	public void fst(T fst){
-		this.fst=fst;
-	}
-	
-	public S snd(){
-		return snd;
-	}
-	public void snd(S snd){
 		this.snd=snd;
 	}
 	public String toString(){

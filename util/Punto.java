@@ -11,11 +11,11 @@ public class Punto{
 		}
 		 
 		public Punto(int x,int y){
-                  this.x=x;
-                    this.y=y;
-                }
+		   this.x=x;
+		   this.y=y;
+		}
 		
-                @Override
+		@Override
 		public String toString(){
 			return "("+String.valueOf(getX())+","+String.valueOf(getY())+")";
 		}
@@ -28,22 +28,22 @@ public class Punto{
 		}
 		
 		public void addY(int aSumar){
-                        y+=aSumar;
-                }
-                public void addX(int aSumar){
-                        x+=aSumar;
-                }
-                public int getX(){
+			y+=aSumar;
+		}
+		public void addX(int aSumar){
+			x+=aSumar;
+		}
+		public int getX(){
 			return x;
 		}
 		public int getY(){
 			return y;
 		}
-               
-                public boolean equals(Punto otro){
-                    return getX()==otro.getX()&&getY()==otro.getY();
-                }
-               
+			   
+		public boolean equals(Punto otro){
+			return getX()==otro.getX()&&getY()==otro.getY();
+		}
+			   
 	public static void main(String [] args){
 	}
 }
