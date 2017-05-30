@@ -1,5 +1,6 @@
 package util;
 import java.util.Arrays;
+import static util.MyString.*;
 /**Clase para imprimir archivos
 @author Antonio Martinez Cruz
 @version 0.0.4
@@ -29,5 +30,10 @@ public class Print{
    public static void p(double[]a){
    System.out.println(Arrays.toString(a));
    }
-
+   /**Metodo estatic que imprime un arreglo bidimensional de enteros*/
+   public static void p(int [][] a){
+	 for(int i=0;i<a.length-1;i++)
+		System.out.print(str(a[i])+"\n");
+	 System.out.println(str(a[a.length-1]));
+	}
 }
