@@ -19,7 +19,7 @@ public class SubeAGit{
 	}
 	
 	public String ponMensaje(){
-		 return "git commit -m "+comentario+"\n";				
+		 return "git commit -m \""+comentario+"\"\n";				
 	}	
 
 	public SubeAGit(String agrega,String sube){
@@ -46,6 +46,6 @@ public class SubeAGit{
 		       getSube(); 	
 	}
 	public static void main(String [] args){
-		escribe("tmp",new SubeAGit(stdin()).subir()));
+		escribe("tmp",new SubeAGit(stdin()).subir());
 	}
 }

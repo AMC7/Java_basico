@@ -17,6 +17,7 @@ public class ManejadorDeArchivos{
 	*/
 	public static void escribe(String url,String texto){
     try{
+	System.out.println(texto);
 	PrintWriter pw= new PrintWriter(new BufferedWriter(new FileWriter(new File(url))));
     pw.write(texto);
     pw.close();	
