@@ -10,6 +10,8 @@ public class GeneradorDeClases{
 	static String[] imports={"util.Dupla","util.Punto"};
 	static String nombreClase;
 	static ArrayList<Dupla> listaMetodos= new ArrayList<Dupla>();
+	
+	
 	public static String importa(String a){
 		return "import "+a+";\n";
 	}
