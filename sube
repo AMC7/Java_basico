@@ -1,6 +1,6 @@
 echo Estas a punto de subir a git
 echo Escribe el comentario
-java -jar compilado.jar
+java -jar sube.jar
 . tmp
 rm tmp
 echo ya se subio a git todo lo del repositorio actual
