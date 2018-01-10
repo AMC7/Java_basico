@@ -1,4 +1,6 @@
 git add .
-git commit -m "Hola
+git commit -m "Hola estoy subiendo cosas a git
+con el nuevo metodo
+haber que tal funciona
 "
 git push
