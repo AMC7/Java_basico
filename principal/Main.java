@@ -9,6 +9,6 @@ import util.Punto;
 public class Main{
 
 	public static void main(String [] args){	
-		QuitaAcento.main(args);			
+		SubeAGit.main(args);			
 	}
 }

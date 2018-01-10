@@ -9,6 +9,7 @@ public class GeneradorDeClases{
 	static String[] estaticos={"util.Print","util.ManejadorDeArchivos","util.MyString"};
 	static String[] imports={"util.Dupla","util.Punto"};
 	static String nombreClase;
+	static String packete;	
 	static ArrayList<Dupla> listaMetodos= new ArrayList<Dupla>();
 	
 	
@@ -30,8 +31,8 @@ public class GeneradorDeClases{
 	}
 	
 	public static String addHeading(){
-	 return addImports(estaticos,imports)
-			+"/**@version 1.0\n"
+	 return "package "+packete+";\n"+addImports(estaticos,imports)
+		+"/**@version 1.0\n"
 	        +"   @author Antonio Martinez Cruz*/\n"
 	        +"public class "+nombreClase+"{\n";
 	 }
@@ -106,14 +107,18 @@ public class GeneradorDeClases{
 	}
     public static void main(String[]args){
 	try{
-     BufferedReader br= new BufferedReader(new InputStreamReader(System.in));	 
+         BufferedReader br= new BufferedReader(new InputStreamReader(System.in));	 
+	 p("Escribe el nombre del paquete");		 
+	 packete = br.readLine();
+	 p("Esceibe el nombre de la clase"); 	 
 	 nombreClase=br.readLine();
+	 p("Escribe los atributos de la clase");		
 	 lee();
 	 String texto=addHeading();
 	 texto+=setAtributos();
 	 texto+=setContructor();
 	 texto+=termina();
-	 escribe(nombreClase+".java",texto);
+	 escribe(packete+"/"+nombreClase+".java",texto);
 	 }catch(Exception e){}
   }
 }

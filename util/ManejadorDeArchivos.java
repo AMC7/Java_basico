@@ -5,6 +5,7 @@ import java.io.BufferedWriter;
 import java.io.PrintWriter;
 import java.io.FileReader;
 import java.io.BufferedReader;
+import java.io.InputStreamReader;
 /**Clase que te sirve para escribir y para leer archivos
 @author Antonio Martinez Cruz
 @version 1.0
@@ -19,7 +20,23 @@ public class ManejadorDeArchivos{
 	PrintWriter pw= new PrintWriter(new BufferedWriter(new FileWriter(new File(url))));
     pw.write(texto);
     pw.close();	
-	}catch(Exception e){}		
+	}catch(Exception e){
+		e.printStackTrace();	
+	}		
+	}
+
+	public static String stdin(){
+		try{
+	  		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+			String texto = "";
+		    	String s = null;
+			while ((s = in.readLine()) != null && s.length() != 0)
+			texto += s+"\n";
+			return texto;	
+		}catch(Exception e ){
+			e.printStackTrace();
+		}
+		return null;
 	}
 	/**Metodo que te recibe una url y te regresa un String con el texto que leiste*/
 	public static String lee(String url){
@@ -31,7 +48,9 @@ public class ManejadorDeArchivos{
       	resultado+=texto+"\n";
 	
 	return resultado;
-	}catch(Exception e){}
+	}catch(Exception e){
+		e.printStackTrace();	
+	}
 	return null;
 	}
 }
