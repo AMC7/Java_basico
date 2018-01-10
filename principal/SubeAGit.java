@@ -46,6 +46,6 @@ public class SubeAGit{
 		       getSube(); 	
 	}
 	public static void main(String [] args){
-		escribe("tmp",new SubeAGit(stdin()).subir());
+		escribe("tmp",new SubeAGit(stdin().replaceAll("\n"," ")).subir());
 	}
 }
