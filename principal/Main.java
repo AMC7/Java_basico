@@ -9,6 +9,6 @@ import util.Punto;
 public class Main{
 
 	public static void main(String [] args){	
-		SubeAGit.main(args);			
+		Depurador.main(args);			
 	}
 }

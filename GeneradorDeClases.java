@@ -37,7 +37,9 @@ public class GeneradorDeClases{
 	        +"public class "+nombreClase+"{\n";
 	 }
 	 public static String termina(){
-		 return "\tpublic static void main(String [] args){\n\t}\n}\n";
+		 return "\tpublic static void main(String [] args){\n"
+			+"\t\t"+nombreClase+" "+nombreClase.toLowerCase()+"= new "+nombreClase+"();\n" 		       
+			+"\t}\n}\n";
 	 }
 	
 	public static  String ponAtributo(Dupla d){
@@ -110,7 +112,7 @@ public class GeneradorDeClases{
          BufferedReader br= new BufferedReader(new InputStreamReader(System.in));	 
 	 p("Escribe el nombre del paquete");		 
 	 packete = br.readLine();
-	 p("Esceibe el nombre de la clase"); 	 
+	 p("Escribe el nombre de la clase"); 	 
 	 nombreClase=br.readLine();
 	 p("Escribe los atributos de la clase");		
 	 lee();
