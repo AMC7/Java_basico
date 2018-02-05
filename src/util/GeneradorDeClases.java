@@ -1,3 +1,4 @@
+package util;
 import static util.ManejadorDeArchivos.*;
 import static util.Print.*;
 import util.Dupla;
@@ -7,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class GeneradorDeClases{
 	static String[] estaticos={"util.Print","util.ManejadorDeArchivos","util.MyString"};
-	static String[] imports={"util.Dupla","util.Punto"};
+	static String[] imports={"util.Dupla","util.Punto","java.util.LinkedList","java.lang.Math","java.util.Hashtable"};
 	static String nombreClase;
 	static String packete;	
 	static ArrayList<Dupla> listaMetodos= new ArrayList<Dupla>();

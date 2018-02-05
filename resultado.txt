@@ -1,1 +1,0 @@
-The failure models less severe than Byzantine failures, and timing failures, are considered “benign” because they do not allow processes to arbitrarily change state or send messages that are not to be sent as per the algorithm. Benign failures are easier to handle than Byzantine failures. Communication failure models • Crash failure A properly functioni        

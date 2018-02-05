@@ -16,14 +16,13 @@ public class ManejadorDeArchivos{
 	       texto texto donde guardaremos la url
 	*/
 	public static void escribe(String url,String texto){
-    try{
-	System.out.println(texto);
-	PrintWriter pw= new PrintWriter(new BufferedWriter(new FileWriter(new File(url))));
-    pw.write(texto);
-    pw.close();	
-	}catch(Exception e){
-		e.printStackTrace();	
-	}		
+	    	try{
+			PrintWriter pw= new PrintWriter(new BufferedWriter(new FileWriter(new File(url))));
+	    		pw.write(texto);
+	    		pw.close();	
+		}catch(Exception e){
+			e.printStackTrace();	
+		}		
 	}
 
 	public static String stdin(){
@@ -32,7 +31,7 @@ public class ManejadorDeArchivos{
 			String texto = "";
 		    	String s = null;
 			while ((s = in.readLine()) != null && s.length() != 0)
-			texto += s+"\n";
+				texto += s+"\n";
 			return texto;	
 		}catch(Exception e ){
 			e.printStackTrace();
@@ -41,18 +40,18 @@ public class ManejadorDeArchivos{
 	}
 	/**Metodo que te recibe una url y te regresa un String con el texto que leiste*/
 	public static String lee(String url){
-	try{		
-	String resultado="";	
-	String texto="";	
-	BufferedReader fr = new BufferedReader(new FileReader(new File(url)));
-    while((texto=fr.readLine())!=null)
-      	resultado+=texto+"\n";
+		try{		
+			String resultado="";	
+			String texto="";	
+			BufferedReader fr = new BufferedReader(new FileReader(new File(url)));
+			while((texto=fr.readLine())!=null)
+			      	resultado+=texto+"\n";
 	
-	return resultado;
-	}catch(Exception e){
-		e.printStackTrace();	
-	}
-	return null;
+			return resultado;
+		}catch(Exception e){
+			e.printStackTrace();	
+		}
+		return null;
 	}
 }
 

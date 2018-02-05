@@ -1,0 +1,30 @@
+<project name="RecocidoSimulado" basedir=".">
+	<property name="src.dir" value="src"/>
+	<property name="build.dir" value="build"/>
+	<property name="classes.dir" value="${build.dir}/classes"/>
+	<property name="jar.dir"	value="${build.dir}/jar"/>
+	<property name="main-class" value="principal.Main"/>
+	<property name="nombre-jar" value="${jar.dir}/${ant.project.name}.jar"/>
+	<property name="lib.dir"	value="lib"/>
+
+	<path id="classpath">
+		<fileset dir="${lib.dir}" includes="**/*.jar"/>	
+	</path>
+	
+	<target name="compile">
+		<delete dir="${build.dir}"/>
+        <mkdir dir="${classes.dir}"/>
+        <javac includeantruntime="false" srcdir="${src.dir}" destdir="${classes.dir}"/>
+		<mkdir dir="${jar.dir}"/>
+		<jar destfile="${nombre-jar}" basedir="${classes.dir}">
+			<manifest>
+				<attribute name="Main-Class" value="${main-class}"/>
+			</manifest>		
+		</jar>
+    </target>
+
+    <target name="run" depends="compile">
+        <java jar="${nombre-jar}" fork="true"/>
+    </target>
+
+</project>
