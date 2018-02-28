@@ -1,9 +1,0 @@
-clear
-javac *.java
-echo compile lo que esta en default
-javac principal/*.java
-echo compile lo que esta en principal
-javac util/*.java
-echo compile lo que esta en util
-jar -cfm compilado.jar Manifest.txt *
-java -jar compilado.jar resultado.txt
