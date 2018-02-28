@@ -11,7 +11,7 @@ public class GeneradorDeClases{
 	static String[] imports={"util.Dupla","util.Punto","java.util.LinkedList","java.lang.Math","java.util.Hashtable"};
 	static String nombreClase;
 	static String packete;	
-	static ArrayList<Dupla> listaMetodos= new ArrayList<Dupla>();
+	static ArrayList<Dupla<String,String>> listaMetodos= new ArrayList<Dupla<String,String>>();
 	
 	
 	public static String importa(String a){
@@ -43,24 +43,24 @@ public class GeneradorDeClases{
 			+"\t}\n}\n";
 	 }
 	
-	public static  String ponAtributo(Dupla d){
+	public static  String ponAtributo(Dupla<String,String> d){
 		return "\tprivate "+d.fst+" "+d.snd+";\n";
 	}
 	public static String setAtributos(){
 		String s="";
-		for(Dupla d:listaMetodos)
+		for(Dupla<String,String> d:listaMetodos)
 			s+=ponAtributo(d);
 		return s+"\n";
 		
 	}
-	public static String setAtribute(Dupla d){
+	public static String setAtribute(Dupla<String,String> d){
 		return "\t\tthis."+d.snd+"="+d.snd+";\n";
 	}
 	
 	public static String upper(String prueba){
 		return prueba.substring(0,1).toUpperCase()+prueba.substring(1);
 	}
-	public static String hazGetter(Dupla d){
+	public static String hazGetter(Dupla<String,String> d){
 		String cadena="\t public "+d.fst+" get";
 		cadena+=upper((String)d.snd)+"(){\n";
 		cadena+="\t\treturn "+d.snd+";\n";
@@ -68,7 +68,7 @@ public class GeneradorDeClases{
 		return cadena;
 	}
 	
-	public static String hazSetter(Dupla d){
+	public static String hazSetter(Dupla<String,String> d){
 		String cadena="\t public void set";
 		cadena+=upper((String)d.snd)+"(){\n";
 		cadena+=setAtribute(d);
@@ -81,18 +81,18 @@ public class GeneradorDeClases{
 		cadena+="\tpublic "+nombreClase+"(";
 		int i=listaMetodos.size();
 		for(int j=0;j<i-1;j++){
-			Dupla a=listaMetodos.get(j);
+			Dupla<String,String> a=listaMetodos.get(j);
 			cadena+=a.fst+" "+a.snd+",";
 		}
 		
-		Dupla r=listaMetodos.get(i-1);
+		Dupla<String,String> r=listaMetodos.get(i-1);
 		cadena+=r.fst+" "+r.snd+"){\n";
 		
-		for(Dupla a:listaMetodos)
+		for(Dupla<String,String> a:listaMetodos)
 			cadena+=setAtribute(a);
 		cadena+="\t}\n\n";
 		
-		for(Dupla a:listaMetodos){
+		for(Dupla<String,String> a:listaMetodos){
 			cadena+=hazGetter(a);
 			cadena+=hazSetter(a);
 		}	
@@ -105,7 +105,7 @@ public class GeneradorDeClases{
 		if(temp.equals(""))
 			break;		
 		String [] a=temp.split(" ");
-		listaMetodos.add(new Dupla(a[0],a[1]));
+		listaMetodos.add(new Dupla<String,String>(a[0],a[1]));
 	 }	
 	}
     public static void main(String[]args){
